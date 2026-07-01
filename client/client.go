@@ -8,9 +8,9 @@ import (
 	antchainutil "github.com/antchain-openapi-sdk-go/antchain-util/service"
 )
 
-/**
- * Model for initing client
- */
+// Description:
+//
+// Model for initing client
 type Config struct {
 	// accesskey id
 	AccessKeyId *string `json:"accessKeyId,omitempty" xml:"accessKeyId,omitempty"`
@@ -19,26 +19,66 @@ type Config struct {
 	// security token
 	SecurityToken *string `json:"securityToken,omitempty" xml:"securityToken,omitempty"`
 	// http protocol
+	//
+	// example:
+	//
+	// http
 	Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty"`
 	// read timeout
+	//
+	// example:
+	//
+	// 10
 	ReadTimeout *int `json:"readTimeout,omitempty" xml:"readTimeout,omitempty"`
 	// connect timeout
+	//
+	// example:
+	//
+	// 10
 	ConnectTimeout *int `json:"connectTimeout,omitempty" xml:"connectTimeout,omitempty"`
 	// http proxy
+	//
+	// example:
+	//
+	// http://localhost
 	HttpProxy *string `json:"httpProxy,omitempty" xml:"httpProxy,omitempty"`
 	// https proxy
+	//
+	// example:
+	//
+	// https://localhost
 	HttpsProxy *string `json:"httpsProxy,omitempty" xml:"httpsProxy,omitempty"`
 	// endpoint
+	//
+	// example:
+	//
+	// cs.aliyuncs.com
 	Endpoint *string `json:"endpoint,omitempty" xml:"endpoint,omitempty"`
 	// proxy white list
+	//
+	// example:
+	//
+	// http://localhost
 	NoProxy *string `json:"noProxy,omitempty" xml:"noProxy,omitempty"`
 	// max idle conns
+	//
+	// example:
+	//
+	// 3
 	MaxIdleConns *int `json:"maxIdleConns,omitempty" xml:"maxIdleConns,omitempty"`
 	// user agent
+	//
+	// example:
+	//
+	// Alibabacloud/1
 	UserAgent *string `json:"userAgent,omitempty" xml:"userAgent,omitempty"`
 	// socks5 proxy
 	Socks5Proxy *string `json:"socks5Proxy,omitempty" xml:"socks5Proxy,omitempty"`
 	// socks5 network
+	//
+	// example:
+	//
+	// TCP
 	Socks5NetWork *string `json:"socks5NetWork,omitempty" xml:"socks5NetWork,omitempty"`
 	// 长链接最大空闲时长
 	MaxIdleTimeMillis *int `json:"maxIdleTimeMillis,omitempty" xml:"maxIdleTimeMillis,omitempty"`
@@ -151,35 +191,83 @@ func (s *Config) SetMaxRequestsPerHost(v int) *Config {
 // 用户/设备标识
 type UserInfo struct {
 	// Android 设备填写，imei原值
+	// example:
+	//
+	// Android 设备填写，imei原值
 	OriginalImei *string `json:"original_imei,omitempty" xml:"original_imei,omitempty"`
+	// Android 设备填写，imei md5值
+	// example:
+	//
 	// Android 设备填写，imei md5值
 	Md5Imei *string `json:"md5_imei,omitempty" xml:"md5_imei,omitempty"`
 	// Android 设备填写,android_id原值
+	// example:
+	//
+	// Android 设备填写,android_id原值
 	OriginalAndroidId *string `json:"original_android_id,omitempty" xml:"original_android_id,omitempty"`
+	// Android 设备填写, md5 后的 android_id 设备号
+	// example:
+	//
 	// Android 设备填写, md5 后的 android_id 设备号
 	Md5AndroidId *string `json:"md5_android_id,omitempty" xml:"md5_android_id,omitempty"`
 	// Android 设备填写，oaid原值
+	// example:
+	//
+	// Android 设备填写，oaid原值
 	OriginalOaid *string `json:"original_oaid,omitempty" xml:"original_oaid,omitempty"`
+	// Android 设备填写，oaid MD5值
+	// example:
+	//
 	// Android 设备填写，oaid MD5值
 	Md5Oaid *string `json:"md5_oaid,omitempty" xml:"md5_oaid,omitempty"`
 	// iOS 设备填写, idfa原值
+	// example:
+	//
+	// iOS 设备填写, idfa原值
 	OriginalIdfa *string `json:"original_idfa,omitempty" xml:"original_idfa,omitempty"`
+	// iOS 设备填写, idfa md5值
+	// example:
+	//
 	// iOS 设备填写, idfa md5值
 	Md5Idfa *string `json:"md5_idfa,omitempty" xml:"md5_idfa,omitempty"`
 	// 客户电话原值
+	// example:
+	//
+	// 客户电话原值
 	OriginalPhone *string `json:"original_phone,omitempty" xml:"original_phone,omitempty"`
+	// md5后的电话号码
+	// example:
+	//
 	// md5后的电话号码
 	Md5Phone *string `json:"md5_phone,omitempty" xml:"md5_phone,omitempty"`
 	// 客户联系方式的sha256
+	// example:
+	//
+	// 客户联系方式的sha256
 	Sha256Phone *string `json:"sha256_phone,omitempty" xml:"sha256_phone,omitempty"`
+	// iOS 设备填写,中国广告协会互联网广告标
+	// example:
+	//
 	// iOS 设备填写,中国广告协会互联网广告标
 	Caid *string `json:"caid,omitempty" xml:"caid,omitempty"`
 	// IOS设备填写，caid版本
+	// example:
+	//
+	// IOS设备填写，caid版本
 	CaidVersion *string `json:"caid_version,omitempty" xml:"caid_version,omitempty"`
+	// 仅腾讯渠道下，WECHAT, WECHAT_MINI_PROGRAM, WECHAT_MINI_GAME投放时传递，微信 openid 保持原值
+	// example:
+	//
 	// 仅腾讯渠道下，WECHAT, WECHAT_MINI_PROGRAM, WECHAT_MINI_GAME投放时传递，微信 openid 保持原值
 	WechatOpenid *string `json:"wechat_openid,omitempty" xml:"wechat_openid,omitempty"`
 	// 仅腾讯渠道下，WECHAT, WECHAT_MINI_PROGRAM, WECHAT_MINI_GAME投放时传递，微信 unionid 保持原值
+	// example:
+	//
+	// 仅腾讯渠道下，WECHAT, WECHAT_MINI_PROGRAM, WECHAT_MINI_GAME投放时传递，微信 unionid 保持原值
 	WechatUnionid *string `json:"wechat_unionid,omitempty" xml:"wechat_unionid,omitempty"`
+	// 仅腾讯渠道下，WECHAT, WECHAT_MINI_PROGRAM, WECHAT_MINI_GAME投放时传递，微信分配的 APPID
+	// example:
+	//
 	// 仅腾讯渠道下，WECHAT, WECHAT_MINI_PROGRAM, WECHAT_MINI_GAME投放时传递，微信分配的 APPID
 	WechatAppId *string `json:"wechat_app_id,omitempty" xml:"wechat_app_id,omitempty"`
 }
@@ -1252,6 +1340,8 @@ type SaveDataConversionRequest struct {
 	TraceInfo *string `json:"trace_info,omitempty" xml:"trace_info,omitempty" require:"true"`
 	// json扩展字段。保险行业必填insurance_info，见文档
 	ExtInfo *string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
+	// 1-广告主自归因 2-数科归因（待上线）
+	AttributeType *int64 `json:"attribute_type,omitempty" xml:"attribute_type,omitempty" require:"true"`
 }
 
 func (s SaveDataConversionRequest) String() string {
@@ -1314,6 +1404,11 @@ func (s *SaveDataConversionRequest) SetTraceInfo(v string) *SaveDataConversionRe
 
 func (s *SaveDataConversionRequest) SetExtInfo(v string) *SaveDataConversionRequest {
 	s.ExtInfo = &v
+	return s
+}
+
+func (s *SaveDataConversionRequest) SetAttributeType(v int64) *SaveDataConversionRequest {
+	s.AttributeType = &v
 	return s
 }
 
@@ -1399,10 +1494,11 @@ type Client struct {
 	MaxRequestsPerHost      *int
 }
 
-/**
- * Init client with Config
- * @param config config contains the necessary information to create a client
- */
+// Description:
+//
+// # Init client with Config
+//
+// @param config - config contains the necessary information to create a client
 func NewClient(config *Config) (*Client, error) {
 	client := new(Client)
 	err := client.Init(config)
@@ -1410,7 +1506,7 @@ func NewClient(config *Config) (*Client, error) {
 }
 
 func (client *Client) Init(config *Config) (_err error) {
-	if tea.BoolValue(util.IsUnset(tea.ToMap(config))) {
+	if tea.BoolValue(util.IsUnset(config)) {
 		_err = tea.NewSDKError(map[string]interface{}{
 			"code":    "ParameterMissing",
 			"message": "'config' can not be unset",
@@ -1439,16 +1535,23 @@ func (client *Client) Init(config *Config) (_err error) {
 	return nil
 }
 
-/**
- * Encapsulate the request and invoke the network
- * @param action api name
- * @param protocol http or https
- * @param method e.g. GET
- * @param pathname pathname of every api
- * @param request which contains request params
- * @param runtime which controls some details of call api, such as retry times
- * @return the response
- */
+// Description:
+//
+// # Encapsulate the request and invoke the network
+//
+// @param action - api name
+//
+// @param protocol - http or https
+//
+// @param method - e.g. GET
+//
+// @param pathname - pathname of every api
+//
+// @param request - which contains request params
+//
+// @param runtime - which controls some details of call api, such as retry times
+//
+// @return the response
 func (client *Client) DoRequest(version *string, action *string, protocol *string, method *string, pathname *string, request map[string]interface{}, headers map[string]*string, runtime *util.RuntimeOptions) (_result map[string]interface{}, _err error) {
 	_err = tea.Validate(runtime)
 	if _err != nil {
@@ -1499,7 +1602,7 @@ func (client *Client) DoRequest(version *string, action *string, protocol *strin
 				"req_msg_id":       antchainutil.GetNonce(),
 				"access_key":       client.AccessKeyId,
 				"base_sdk_version": tea.String("TeaSDK-2.0"),
-				"sdk_version":      tea.String("7.2.4"),
+				"sdk_version":      tea.String("7.2.5"),
 				"_prod_code":       tea.String("MORSERTA"),
 				"_prod_channel":    tea.String("default"),
 			}
@@ -1557,10 +1660,11 @@ func (client *Client) DoRequest(version *string, action *string, protocol *strin
 	return _resp, _err
 }
 
-/**
- * Description: RTA广告主数据回传
- * Summary: RTA广告主数据回传
- */
+// Description:
+//
+// Description: RTA广告主数据回传
+//
+// Summary: RTA广告主数据回传
 func (client *Client) FeedbackReportData(request *FeedbackReportDataRequest) (_result *FeedbackReportDataResponse, _err error) {
 	runtime := &util.RuntimeOptions{}
 	headers := make(map[string]*string)
@@ -1573,10 +1677,11 @@ func (client *Client) FeedbackReportData(request *FeedbackReportDataRequest) (_r
 	return _result, _err
 }
 
-/**
- * Description: RTA广告主数据回传
- * Summary: RTA广告主数据回传
- */
+// Description:
+//
+// Description: RTA广告主数据回传
+//
+// Summary: RTA广告主数据回传
 func (client *Client) FeedbackReportDataEx(request *FeedbackReportDataRequest, headers map[string]*string, runtime *util.RuntimeOptions) (_result *FeedbackReportDataResponse, _err error) {
 	_err = util.ValidateModel(request)
 	if _err != nil {
@@ -1591,10 +1696,11 @@ func (client *Client) FeedbackReportDataEx(request *FeedbackReportDataRequest, h
 	return _result, _err
 }
 
-/**
- * Description: 转化数据回传接口
- * Summary: 转化数据回传接口
- */
+// Description:
+//
+// Description: 转化数据回传接口
+//
+// Summary: 转化数据回传接口
 func (client *Client) ConvertAdData(request *ConvertAdDataRequest) (_result *ConvertAdDataResponse, _err error) {
 	runtime := &util.RuntimeOptions{}
 	headers := make(map[string]*string)
@@ -1607,10 +1713,11 @@ func (client *Client) ConvertAdData(request *ConvertAdDataRequest) (_result *Con
 	return _result, _err
 }
 
-/**
- * Description: 转化数据回传接口
- * Summary: 转化数据回传接口
- */
+// Description:
+//
+// Description: 转化数据回传接口
+//
+// Summary: 转化数据回传接口
 func (client *Client) ConvertAdDataEx(request *ConvertAdDataRequest, headers map[string]*string, runtime *util.RuntimeOptions) (_result *ConvertAdDataResponse, _err error) {
 	_err = util.ValidateModel(request)
 	if _err != nil {
@@ -1625,10 +1732,11 @@ func (client *Client) ConvertAdDataEx(request *ConvertAdDataRequest, headers map
 	return _result, _err
 }
 
-/**
- * Description: 曝光/点击数据回传接口
- * Summary: 曝光/点击数据回传接口
- */
+// Description:
+//
+// Description: 曝光/点击数据回传接口
+//
+// Summary: 曝光/点击数据回传接口
 func (client *Client) ClickAdData(request *ClickAdDataRequest) (_result *ClickAdDataResponse, _err error) {
 	runtime := &util.RuntimeOptions{}
 	headers := make(map[string]*string)
@@ -1641,10 +1749,11 @@ func (client *Client) ClickAdData(request *ClickAdDataRequest) (_result *ClickAd
 	return _result, _err
 }
 
-/**
- * Description: 曝光/点击数据回传接口
- * Summary: 曝光/点击数据回传接口
- */
+// Description:
+//
+// Description: 曝光/点击数据回传接口
+//
+// Summary: 曝光/点击数据回传接口
 func (client *Client) ClickAdDataEx(request *ClickAdDataRequest, headers map[string]*string, runtime *util.RuntimeOptions) (_result *ClickAdDataResponse, _err error) {
 	_err = util.ValidateModel(request)
 	if _err != nil {
@@ -1659,10 +1768,11 @@ func (client *Client) ClickAdDataEx(request *ClickAdDataRequest, headers map[str
 	return _result, _err
 }
 
-/**
- * Description: 广告汇总数据
- * Summary: 广告汇总数据
- */
+// Description:
+//
+// Description: 广告汇总数据
+//
+// Summary: 广告汇总数据
 func (client *Client) ReportAdData(request *ReportAdDataRequest) (_result *ReportAdDataResponse, _err error) {
 	runtime := &util.RuntimeOptions{}
 	headers := make(map[string]*string)
@@ -1675,10 +1785,11 @@ func (client *Client) ReportAdData(request *ReportAdDataRequest) (_result *Repor
 	return _result, _err
 }
 
-/**
- * Description: 广告汇总数据
- * Summary: 广告汇总数据
- */
+// Description:
+//
+// Description: 广告汇总数据
+//
+// Summary: 广告汇总数据
 func (client *Client) ReportAdDataEx(request *ReportAdDataRequest, headers map[string]*string, runtime *util.RuntimeOptions) (_result *ReportAdDataResponse, _err error) {
 	_err = util.ValidateModel(request)
 	if _err != nil {
@@ -1693,10 +1804,11 @@ func (client *Client) ReportAdDataEx(request *ReportAdDataRequest, headers map[s
 	return _result, _err
 }
 
-/**
- * Description: 广告主通过该接口将归因后的转化数据回传给数科，数科回传至广告主
- * Summary: 广告主通过该接口将归因后的转化数据回传给数科，数科回传至广告主
- */
+// Description:
+//
+// Description: 广告主通过该接口将归因后的转化数据回传给数科，数科回传至广告主
+//
+// Summary: 广告主通过该接口将归因后的转化数据回传给数科，数科回传至广告主
 func (client *Client) OcpxAdData(request *OcpxAdDataRequest) (_result *OcpxAdDataResponse, _err error) {
 	runtime := &util.RuntimeOptions{}
 	headers := make(map[string]*string)
@@ -1709,10 +1821,11 @@ func (client *Client) OcpxAdData(request *OcpxAdDataRequest) (_result *OcpxAdDat
 	return _result, _err
 }
 
-/**
- * Description: 广告主通过该接口将归因后的转化数据回传给数科，数科回传至广告主
- * Summary: 广告主通过该接口将归因后的转化数据回传给数科，数科回传至广告主
- */
+// Description:
+//
+// Description: 广告主通过该接口将归因后的转化数据回传给数科，数科回传至广告主
+//
+// Summary: 广告主通过该接口将归因后的转化数据回传给数科，数科回传至广告主
 func (client *Client) OcpxAdDataEx(request *OcpxAdDataRequest, headers map[string]*string, runtime *util.RuntimeOptions) (_result *OcpxAdDataResponse, _err error) {
 	_err = util.ValidateModel(request)
 	if _err != nil {
@@ -1727,10 +1840,11 @@ func (client *Client) OcpxAdDataEx(request *OcpxAdDataRequest, headers map[strin
 	return _result, _err
 }
 
-/**
- * Description: 实验效果数据拉取接口
- * Summary: 实验效果数据拉取接口
- */
+// Description:
+//
+// Description: 实验效果数据拉取接口
+//
+// Summary: 实验效果数据拉取接口
 func (client *Client) DataAdDataExportExperiment(request *DataAdDataExportExperimentRequest) (_result *DataAdDataExportExperimentResponse, _err error) {
 	runtime := &util.RuntimeOptions{}
 	headers := make(map[string]*string)
@@ -1743,10 +1857,11 @@ func (client *Client) DataAdDataExportExperiment(request *DataAdDataExportExperi
 	return _result, _err
 }
 
-/**
- * Description: 实验效果数据拉取接口
- * Summary: 实验效果数据拉取接口
- */
+// Description:
+//
+// Description: 实验效果数据拉取接口
+//
+// Summary: 实验效果数据拉取接口
 func (client *Client) DataAdDataExportExperimentEx(request *DataAdDataExportExperimentRequest, headers map[string]*string, runtime *util.RuntimeOptions) (_result *DataAdDataExportExperimentResponse, _err error) {
 	_err = util.ValidateModel(request)
 	if _err != nil {
@@ -1761,10 +1876,11 @@ func (client *Client) DataAdDataExportExperimentEx(request *DataAdDataExportExpe
 	return _result, _err
 }
 
-/**
- * Description: 接收未归因的转化数据
- * Summary: 接收未归因的转化数据
- */
+// Description:
+//
+// Description: 接收未归因的转化数据
+//
+// Summary: 接收未归因的转化数据
 func (client *Client) ConversionAdData(request *ConversionAdDataRequest) (_result *ConversionAdDataResponse, _err error) {
 	runtime := &util.RuntimeOptions{}
 	headers := make(map[string]*string)
@@ -1777,10 +1893,11 @@ func (client *Client) ConversionAdData(request *ConversionAdDataRequest) (_resul
 	return _result, _err
 }
 
-/**
- * Description: 接收未归因的转化数据
- * Summary: 接收未归因的转化数据
- */
+// Description:
+//
+// Description: 接收未归因的转化数据
+//
+// Summary: 接收未归因的转化数据
 func (client *Client) ConversionAdDataEx(request *ConversionAdDataRequest, headers map[string]*string, runtime *util.RuntimeOptions) (_result *ConversionAdDataResponse, _err error) {
 	_err = util.ValidateModel(request)
 	if _err != nil {
@@ -1795,10 +1912,11 @@ func (client *Client) ConversionAdDataEx(request *ConversionAdDataRequest, heade
 	return _result, _err
 }
 
-/**
- * Description: 接收客户已归因转化事件
- * Summary: 接收客户已归因转化事件
- */
+// Description:
+//
+// Description: 接收客户已归因转化事件
+//
+// Summary: 接收客户已归因转化事件
 func (client *Client) ConversionAdDataAttributed(request *ConversionAdDataAttributedRequest) (_result *ConversionAdDataAttributedResponse, _err error) {
 	runtime := &util.RuntimeOptions{}
 	headers := make(map[string]*string)
@@ -1811,10 +1929,11 @@ func (client *Client) ConversionAdDataAttributed(request *ConversionAdDataAttrib
 	return _result, _err
 }
 
-/**
- * Description: 接收客户已归因转化事件
- * Summary: 接收客户已归因转化事件
- */
+// Description:
+//
+// Description: 接收客户已归因转化事件
+//
+// Summary: 接收客户已归因转化事件
 func (client *Client) ConversionAdDataAttributedEx(request *ConversionAdDataAttributedRequest, headers map[string]*string, runtime *util.RuntimeOptions) (_result *ConversionAdDataAttributedResponse, _err error) {
 	_err = util.ValidateModel(request)
 	if _err != nil {
@@ -1829,10 +1948,11 @@ func (client *Client) ConversionAdDataAttributedEx(request *ConversionAdDataAttr
 	return _result, _err
 }
 
-/**
- * Description: 新版转化回传接口
- * Summary: 新版转化回传接口
- */
+// Description:
+//
+// Description: 新版转化回传接口
+//
+// Summary: 新版转化回传接口
 func (client *Client) SaveDataConversion(request *SaveDataConversionRequest) (_result *SaveDataConversionResponse, _err error) {
 	runtime := &util.RuntimeOptions{}
 	headers := make(map[string]*string)
@@ -1845,10 +1965,11 @@ func (client *Client) SaveDataConversion(request *SaveDataConversionRequest) (_r
 	return _result, _err
 }
 
-/**
- * Description: 新版转化回传接口
- * Summary: 新版转化回传接口
- */
+// Description:
+//
+// Description: 新版转化回传接口
+//
+// Summary: 新版转化回传接口
 func (client *Client) SaveDataConversionEx(request *SaveDataConversionRequest, headers map[string]*string, runtime *util.RuntimeOptions) (_result *SaveDataConversionResponse, _err error) {
 	_err = util.ValidateModel(request)
 	if _err != nil {
